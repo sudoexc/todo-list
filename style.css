@@ -1,0 +1,187 @@
+/* Добавляем контейнер с фиксированной шириной */
+.container-wrapper {
+    width: 1220px;
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 20px; /* Добавляем отступы, если нужно */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+
+/* Основные стили для тела */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Для размещения кнопки */
+}
+
+/* Стили для кнопки переключения темы */
+#themeToggleButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px; /* Уменьшаем размер кнопки */
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-size: 14px; /* Уменьшаем размер шрифта */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#themeToggleButton:hover {
+    background: var(--button-hover-background);
+}
+
+/* Стили для контейнера */
+.container {
+    background: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Основные стили для заголовка */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Стили для input */
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
+
+/* Стили для кнопок */
+button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-background);
+}
+
+/* Стили для списка задач */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: var(--task-background);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.task-text {
+    margin-bottom: 10px;
+}
+
+li button {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+li button:hover {
+    background: #c82333;
+}
+
+/* Light Theme Variables */
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000000;
+    --container-background: #ffffff;
+    --input-background: #ffffff;
+    --button-background: #28a745;
+    --button-text-color: #ffffff;
+    --button-hover-background: #218838;
+    --task-background: #f4f4f4;
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --container-background: #444444;
+    --input-background: #555555;
+    --button-background: #4CAF50;
+    --button-text-color: #ffffff;
+    --button-hover-background: #45a049;
+    --task-background: #555555;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .container-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #themeToggleButton {
+        top: 5px;
+        right: 5px;
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+
+    .container {
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    li {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #themeToggleButton {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+
+#themeToggleButton {
+    width: 100px;
+    height: 50px;
+}
